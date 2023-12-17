@@ -4,16 +4,16 @@ constant: CONNECTION_NAME {
 }
 
 constant: GCP_PROJECT {
-  value: "GCP Project Name"
+  value: "analitica-caffenio"
   export: override_required
 }
 
 constant: REPORTING_DATASET {
-  value: "Reporting Dataset Name"
+  value: "reporting_s4h_caffenio"
   export: override_required
 }
 
 constant: CLIENT {
-  value: "Client ID"
+  value: "200"
   export: override_required
 }
