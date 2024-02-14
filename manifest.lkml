@@ -9,11 +9,13 @@ constant: GCP_PROJECT {
 }
 
 constant: REPORTING_DATASET {
-  value: "reporting_s4h_caffenio_qa"
+ # value: "reporting_s4h_caffenio_qa"
+  value: "reporting_s4h_caffenio"
   export: override_required
 }
 
 constant: CLIENT {
-  value: "200"
+  #value: "200"
+  value: "100"
   export: override_required
 }
