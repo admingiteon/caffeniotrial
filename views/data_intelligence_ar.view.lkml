@@ -17,17 +17,11 @@ view: data_intelligence_ar {
       value: "USD"
     }
     allowed_value: {
-      label: "EUR"
-      value: "EUR"
+      label: "MXN"
+      value: "MXN"
     }
-    allowed_value: {
-      label: "CAD"
-      value: "CAD"
-    }
-    allowed_value: {
-      label: "JPY"
-      value: "JPY"
-    }
+
+
     default_value: "USD"
   }
 
@@ -529,7 +523,7 @@ view: data_intelligence_ar {
   measure: Total_Receivables{
     type: sum
     value_format_name: Greek_Number_Format
-    sql: ${Accounts_Receivable_Global_Currency} ;;
+    sql:case when  ${Accounts_Receivable_Global_Currency} <0 then ${Accounts_Receivable_Global_Currency} *-1 else ${Accounts_Receivable_Global_Currency} end  ;;
 #     html: <a href="#drillmenu" target="_self">
 #     {% if value < 0 %}
 #     {% assign abs_value = value | times: -1.0 %}
@@ -612,7 +606,7 @@ view: data_intelligence_ar {
   measure: OverDue_Amount{
     type: sum
     value_format_name: Greek_Number_Format
-    sql: ${Open_and_Over_Due_Global_Currency};;
+    sql: case when ${Open_and_Over_Due_Global_Currency} <=0 then ${Open_and_Over_Due_Global_Currency} *-1 else ${Open_and_Over_Due_Global_Currency} end ;;
 #     html: <a href="#drillmenu" target="_self">
 #     {% if value < 0 %}
 #     {% assign abs_value = value | times: -1.0 %}
