@@ -444,7 +444,7 @@ view: data_intelligence_ar {
   measure: Sum_of_Open_and_Over_Due_Local_Currency{
     type: sum
     value_format_name: Greek_Number_Format
-    sql: ${Open_and_Over_Due_Global_Currency};;
+    sql: case when ${Open_and_Over_Due_Global_Currency} <= 0 then ${Open_and_Over_Due_Global_Currency} *-1 else ${Open_and_Over_Due_Global_Currency} end ;;
 #     html: <a href="#drillmenu" target="_self">
 #     {% if value < 0 %}
 #     {% assign abs_value = value | times: -1.0 %}
